@@ -1,6 +1,7 @@
+
 class Cab_Invoice {
-    fun calculateFair(kms : Double, time : Double): Double {
-        val Const = 10.00
-        return kms * Const + time
+    fun calculateFair(distance: List<Ride>, time: Double): Double {
+        return distance * 10.00+ time;
     }
+
 }

@@ -5,6 +5,7 @@ node_modules/
 !/.projen/deps.json
 !/.projen/files.json
 build/
+gradle.properties
 target/
 node_modules
 yarn.lock
