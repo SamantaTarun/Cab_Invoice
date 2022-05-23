@@ -31,7 +31,7 @@ pluginManagement {
                 includeGroup "dev.medly" // plugin artifact's group id
             }
         }
-    
+
         gradlePluginPortal();
     }
 }
