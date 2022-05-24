@@ -6,7 +6,7 @@ class Cab_Test : StringSpec() {
 
         "total for 0 kms and 0 mi̦nutes should be Rs.0" {
             val rideOne = Ride(10.0, 1.0)
-            Cab_Invoice().calculateFair(listOf<Ride>(rideOne)) shouldBeExactly 11.0
+            Cab_Invoice().calculateFair(listOf<Ride>(rideOne)) shouldBeExactly 101.0
         }
 
         "total for 1 kms and 21 mi̦nutes should be Rs.21" {
