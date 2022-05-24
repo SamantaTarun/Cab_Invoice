@@ -6,7 +6,7 @@ class Cab_Invoice {
           const val T_rate=1.0;
         }
         fun calculateFair(Rides: List<Ride>): Double {
-        return Rides.sumOf { it.distance * D_rate + it.time * T_rate}
+        return Rides.sumOf { it?.distance * D_rate + it?.time * T_rate}
     }
 
 }
