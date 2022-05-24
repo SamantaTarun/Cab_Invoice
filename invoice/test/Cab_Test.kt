@@ -3,17 +3,32 @@ import io.kotest.matchers.doubles.shouldBeExactly
 
 class Cab_Test : StringSpec() {
     init {
-
-        "total for 0 kms and 0 mi̦nutes should be Rs.0" {
+        "total distance travel is 1.1 kms and total time taken 0.1 units" {
+            val rideOne = Ride(1.1, 0.1)
+            Cab_Invoice().calculateFair(listOf<Ride>(rideOne)) shouldBeExactly 11.1
+        }
+        "total distance travel is 10 kms and total time taken 1 units" {
             val rideOne = Ride(10.0, 1.0)
             Cab_Invoice().calculateFair(listOf<Ride>(rideOne)) shouldBeExactly 101.0
         }
-
-        "total for 1 kms and 21 mi̦nutes should be Rs.21" {
+        "total distance travel is 7 km and total time taken 1 units" {
+            val rideOne = Ride(3.0, 0.3)
+            val rideTwo = Ride(2.0, 0.2)
+            val rideThree  = Ride(2.0, 0.5)
+            Cab_Invoice().calculateFair(listOf(rideOne, rideTwo, rideThree)) shouldBeExactly  71.0
+        }
+        "total distance travel is 1 km and total time taken 11 units" {
             val rideOne = Ride(0.0, 0.0)
             val rideTwo = Ride(1.0, 1.0)
             val rideThree  = Ride(0.0, 10.0)
             Cab_Invoice().calculateFair(listOf(rideOne, rideTwo, rideThree)) shouldBeExactly  21.0
+        }
+
+        "total distance travel is 20.5 km and total time taken 9 units" {
+            val rideOne = Ride(10.0, 3.0)
+            val rideTwo = Ride(9.0, 4.0)
+            val rideThree  = Ride(1.5, 2.0)
+            Cab_Invoice().calculateFair(listOf(rideOne, rideTwo, rideThree)) shouldBeExactly  214.0
         }
     }
 }
